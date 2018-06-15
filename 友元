@@ -1,0 +1,46 @@
+//一个类作为另一个类的友元，称为友元类。友元类的所有成员函数都是另一类的友元函数，都可以通过对象名直接访问另一类的私有成员。
+//通俗来说，girl是boy的友元类，girl可以直接访问boy中私有成员，
+
+#include<iostream>
+using namespace std;
+
+
+class boy;
+class girl
+{
+	char *name;
+public:
+	girl(char *n)   //定义：构造函数
+	{
+		name = n;
+	}
+	void prt(boy &b);  //声明：成员函数
+};
+
+
+class boy
+{
+	friend girl;   //声明：类girl是类boy的友元类，girl的所有成员函数都可调用类boy的私有成员
+	char *name;
+public:
+	boy(char *n)
+	{
+		name = n;
+	}
+};
+
+
+void girl::prt(boy &b)   //定义：成员函数（girl中的）（b是boy类）
+{
+	cout << name <<"\n"<< b.name<<endl;   // 直接调用自己的name，也可以通过b调用boy的name（一般函数不能直接调用类中的私有name）
+}
+
+
+void main()
+{
+	girl g("lili");
+	boy b("zaza");
+	g.prt(b);
+	int x;
+	cin >> x ;
+}
