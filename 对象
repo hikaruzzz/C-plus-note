@@ -54,9 +54,9 @@ double CRectangle::area()
 void main()
 {
 	CRectangle Rect2(30, 20);
-	CRectangle *pR = &Rect2;
-	int a;
-	CRectangle *new01 = new CRectangle(1,2);
+	CRectangle *pR = &Rect2; 
+	CRectangle *new01 = new CRectangle(1,2); //动态创建对象（new）
 	cout << "rect2 long" << new01->circum() << endl; //注意：指针变量的引用  ->
-	cin >> a ;
+	
+	system("pause"); 
 }
