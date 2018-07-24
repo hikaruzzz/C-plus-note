@@ -57,6 +57,26 @@ void main()
 	CRectangle *pR = &Rect2; 
 	CRectangle *new01 = new CRectangle(1,2); //动态创建对象（new）
 	cout << "rect2 long" << new01->circum() << endl; //注意：指针变量的引用  ->
-	
 	system("pause"); 
+	
+	//多维（动态）数组对象建立，必须用默认构造函数。
+	CRectangle *p1 = new CRectangle[2]; //一维数组对象建立
+	delete[]p1;  //删除（没空格）
+	system("pause");
+
+	CRectangle **p2 = new CRectangle*[3]; //设置 行
+	for (int i = 0; i < 3; i++)
+	{
+		p2[i] = new CRectangle[2]; //设置 列（p2[0]行建立2列）
+		cout << "1" << endl;
+	}//二维 建立
+
+	for (int k = 0; k < 3; k++)
+	{
+		delete[]p2[k];
+		p2[k] = NULL;
+	}
+	delete[]p2;
+	p2 = NULL;
+	//二维 删除
 }
