@@ -1,0 +1,36 @@
+// 关键字：动态对象 链表（创建&删除）
+
+#include<iostream>
+using namespace std;
+
+
+class CBucket
+{
+public:
+	int scanline;
+	CBucket *pNext;
+	CBucket()
+	{
+		cout << "set new object" << endl;
+	}
+};
+
+void main()
+{
+	//动态对象 链表
+	CBucket *pHead = new CBucket; //头 对象产生
+	CBucket *pCurrent;
+	pCurrent = pHead;
+	pCurrent->scanline = 1;
+
+	pCurrent->pNext = new CBucket;
+	pCurrent = pCurrent->pNext;
+	pCurrent->scanline = 2;
+
+	pCurrent->pNext = NULL;
+
+	delete pCurrent, pHead; //清空指向的内存空间
+	pHead = NULL;  //指针置空
+	pCurrent = NULL;
+	system("pause");
+}
