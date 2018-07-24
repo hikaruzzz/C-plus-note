@@ -1,0 +1,8 @@
+//关键字：
+
+//派生类构造函数 定义（调用基类的构造函数）
+CCuboid::CCuboid(int width):CRectangle(width)
+{
+  //xxxxxxx
+}
+
