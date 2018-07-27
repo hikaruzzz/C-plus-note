@@ -1,0 +1,21 @@
+typedef struct tagRGB {
+	int r;
+	int g;
+	int b;
+}RGB;  //结构体定义
+
+RGB func(RGB rgbIn) //传入RGB类型 参数
+{
+	rgbIn.r = 111;
+  return rgbIn;  //函数前RGB，返回的值是RGB类型
+}  
+
+void main()
+{
+	RGB rgbFile;
+	rgbFile.r = 1;
+	rgbFile.g = 2;
+	rgbFile.b = 3;
+
+	rgbFile = func(rgbFile);
+}
