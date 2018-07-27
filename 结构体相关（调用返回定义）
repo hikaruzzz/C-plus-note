@@ -1,3 +1,5 @@
+//关键字：结构体的函数调用与返回，数组内存储结构体
+
 typedef struct tagRGB {
 	int r;
 	int g;
@@ -18,4 +20,6 @@ void main()
 	rgbFile.b = 3;
 
 	rgbFile = func(rgbFile);
+
+	RGB newRgb[256][256]; //定义一个二维数组（相当于一个屏幕表面），里面每一项都是一个结构体变量（含r，g，b三项）
 }
