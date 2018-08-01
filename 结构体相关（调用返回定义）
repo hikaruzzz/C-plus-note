@@ -22,5 +22,29 @@ void main()
 	rgbFile = func(rgbFile);
 
 	RGB newRgb[256][256]; //定义一个二维数组（相当于一个屏幕表面），里面每一项都是一个结构体变量（含r，g，b三项）
-	
+}
+
+//（3）函数返回结构体数组
+/*要返回一个指针，这个指针必须在堆区或全局数据区，函数只能有一个返回值(通过指针可访问多个值)
+因此，你的结构体数组，要么就是全局数据，要么是动态分配的数据区
+如struct mystruct *m_data=malloc(n*sizeof(struct mystruct));
+n为数组大小，
+也可以是static struct mystruct m_data[n];
+return m_data即可 
+*/
+
+typedef struct rgbNew{
+int r;
+int g;
+int b;
+}rgbK;
+
+rgbK* test1(rgbK rgbGroup[10])
+{return rgbGroup;} //返回指针
+
+void main()
+{
+	rgbK a[10];
+	rgbK *p = test1(a); //定义一个指针*p 来接收函数返回的指针（而不是用一个数组接收）
+	cout<< p[1].r;  //指针引用
 }
