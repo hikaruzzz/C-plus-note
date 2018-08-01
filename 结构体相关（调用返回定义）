@@ -39,7 +39,7 @@ int g;
 int b;
 }rgbK;
 
-rgbK* test1(rgbK rgbGroup[10])
+rgbK* test1(rgbK rgbGroup[10])   //函数返回指针时，要加*号
 {return rgbGroup;} //返回指针
 
 void main()
