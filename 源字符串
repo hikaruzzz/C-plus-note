@@ -1,0 +1,4 @@
+//源字符串（把整个字符串当字符，\n这些不执行）
+
+char a[] = R"(First line.\nSecond line.\nEnd of message.\n)";
+printf(a);
