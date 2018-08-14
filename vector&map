@@ -1,0 +1,30 @@
+// vector: 动态数组；map 哈希表 
+#include<vector>
+vector<int>test; //定义一个vector动态数组，数据类型为int，test为数组名
+
+test.push_back(1);//把1压入vector，
+test.push_back(2); //把2压入vector，变成test[0] = 1,test[1]=2
+
+test.insert(test.begin()+I,3); //在第i+1个元素前插入3
+test.erase(vec.begin()+2); //删除第3个元素
+
+test.size(); //大小
+test.clear(); //清空
+
+////////// 二维数组，指针形式， //////
+1. int out[3][2] = { 1, 2, 3, 4, 5, 6 };
+2. vector <int*> v1; //接收二维数组的定义方法（指针）
+3. v1.push_back(out[0]); //每行首地址压入
+4. v1.push_back(out[1]);
+5. v1.push_back(out[2]);
+6. cout << v1[0][0] << endl;//1 
+7. cout << v1[0][1] << endl;//2
+8. cout << v1[1][0] << endl;//3
+9. cout << v1[1][1] << endl;//4
+10. cout << v1[2][0] << endl;//5
+11. cout << v1[2][1] << endl;//6
+//----------------------------------------------
+
+#include<map>
+#include<string> //字符串操作必备
+
