@@ -1,0 +1,26 @@
+//模板，即把类型定义为参数（可传入参数），pair源码中发现
+
+template<class T1,class T2>
+class testClass  //类模板定义
+{
+public:
+	testClass(T1 a,T2 b);
+	void show();
+
+private:
+	T1 i;
+	T2 j;
+};
+
+template<class T1,class T2>  //一个模板对应一个函数定义
+testClass<T1,T2>::testClass(T1 a, T2 b) :i(a), j(b) {};  //构造函数没有给函数类型，但在后面加了<T1,T2>
+
+template<class T1, class T2>  //一个模板对应一个函数定义
+void testClass<T1,T2>::show() { cout << i << "  " << j << endl; } //留意后加了<T1,T2>
+
+void main()
+{
+	testClass<int, int>xx(3, 5); //实例化&初始化
+	xx.show();
+	system("pause");
+}
