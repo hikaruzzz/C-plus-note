@@ -1,3 +1,4 @@
+
 // vector: 动态数组；map 哈希表 
 #include<vector>
 vector<int>test; //定义一个vector动态数组，数据类型为int，test为数组名
@@ -49,3 +50,4 @@ test.clear(); //清空
 	
 	//map普通寻找
 	cout << mapStudent["uid002"] << endl;
+	cout << mapStudent.find("uid002")->second << endl;   //此处->不能用.代替
