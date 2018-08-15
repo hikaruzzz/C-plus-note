@@ -28,3 +28,24 @@ test.clear(); //清空
 #include<map>
 #include<string> //字符串操作必备
 
+//pair （对组）为对象，将一对值组合成一个值，含有first和second两个公有函数
+	cout << pair<int, string>(1, "fs").second << endl;//pair 例子1
+	pair<int, string>p1(1, "sss");
+	cout << p1.first << endl; //pair 例子2
+
+	//map应用
+	map<string, string> mapStudent;//声明变量（string类型）
+
+	mapStudent.insert(pair<string, string>("uid001", "aaa"));//用insert函数 用pair（对组）方法插入
+	mapStudent["uid002"] = "kaokao"; //用"array"方式插入
+
+	//map的迭代器用法（用于查找是否key是否存在）
+	map<string, string>::iterator iter; //定义一个迭代器
+	iter = mapStudent.find("uid001");//返回一个迭代器，指向键值为key的元素，没找到则返回尾部的迭代器
+	if (iter == mapStudent.end())
+		cout << "not find" << endl;
+	else
+		cout << "find uid001:" << endl;
+	
+	//map普通寻找
+	cout << mapStudent["uid002"] << endl;
