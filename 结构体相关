@@ -1,4 +1,4 @@
-//关键字：1.结构体的函数调用与返回，2.数组内存储结构体，3.函数返回 结构体数组
+//关键字：1.结构体的函数调用与返回，2.数组内存储结构体，3.函数返回 结构体数组 3.结构体的构造函数（初始化）
 
 typedef struct tagRGB {
 	int r;
@@ -47,4 +47,21 @@ void main()
 	rgbK a[10];
 	rgbK *p = test1(a); //定义一个指针*p 来接收函数返回的指针（而不是用一个数组接收）
 	cout<< p[1].r;  //指针引用
+}
+
+
+///////////////// 结构体 构造函数  
+
+ struct ListNode 
+ {
+      int val;
+      ListNode *next;
+      ListNode(int x) : val(x), next(NULL) {} //注意此处格式
+ };
+
+
+void main_01()
+{
+	ListNode *p;
+	p->next = new ListNode(3); //初值3 赋给构造函数
 }
